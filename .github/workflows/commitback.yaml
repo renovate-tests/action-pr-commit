@@ -1,0 +1,15 @@
+name: Commit Back
+
+on: [pull_request]
+
+jobs:  
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: datecommit
+      run: |
+        echo `date` > date.txt
+        git add
+        git commit -m "add date"
+        git push
