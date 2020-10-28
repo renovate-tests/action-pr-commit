@@ -12,6 +12,6 @@ jobs:
       - name: datecommit
         run: |
           echo `date` > date.txt
-          git add
+          git add --all
           git commit -m "add date"
           git push
