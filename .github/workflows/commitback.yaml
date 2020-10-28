@@ -3,13 +3,15 @@ name: Commit Back
 on: [pull_request]
 
 jobs:  
-  test:
+  datecommit:
     runs-on: ubuntu-latest
 
     steps:
-    - name: datecommit
-      run: |
-        echo `date` > date.txt
-        git add
-        git commit -m "add date"
-        git push
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: datecommit
+        run: |
+          echo `date` > date.txt
+          git add
+          git commit -m "add date"
+          git push
